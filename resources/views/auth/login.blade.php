@@ -39,12 +39,12 @@
                     </div>
                   </div>
              <!--Login Button Route usabonon-->
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Login</button>
+                  <div class="d-flex justify-content-center mb-lg-4">
+                    <a href="{{ route('dashboard') }}" class="btn btn-primary">Login</a>
                   </div>
              <!--Register Button Route usabonon-->
                   <div class="">
-                     <a href="{{ route('register') }}" class="btn btn-secondary">No account? Register Here!</a>
+                     <a href="{{ route('register') }}" class="btn btn-secondary">Register kuno</a>
                   </div>
                 </form>
              <!-- Sample canva pic/element -->

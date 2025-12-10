@@ -47,12 +47,12 @@
                     </div>
                   </div>
             <!-- Repeat Password Input -->
-                  <div class="d-flex flex-row align-items-center mb-4">
+                  <!-- <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
                       <input type="password" id="form3Example4cd" class="form-control" placeholder="Repeat Password"/>
                     </div>
-                  </div>
+                  </div> -->
             <!--Register Button usabonon-->
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Register</button>
