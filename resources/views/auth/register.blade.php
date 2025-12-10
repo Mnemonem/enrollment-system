@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>Register</title>
 </head>
-
+<!-- CSS Only -->
 <body style="font-family: 'Poppins', sans-serif;">
   <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
@@ -22,7 +21,7 @@
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                  <p class=" h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
                   <form action="{{ route('register.post') }}" method="POST" class="mx-1 mx-md-4">
                     @csrf @if ($errors->any())
@@ -71,11 +70,11 @@
                       <button type="submit" class="btn btn-primary btn-lg">Register</button>
                     </div>
 
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <a href="{{ route('login') }}" class="btn btn-link text-decoration-none">Naa kay account daan?
-                        paglogin tawon diri</a>
+                    <div class="">
+                     <a href="{{ route('login') }}" class="text-decoration-none fw-bold ms-4" style="color: #393f81;">
+                           Naa kay account daan? paglogin tawon diri
+                        </a>
                     </div>
-
                   </form>
 
                 </div>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>Login</title>
 </head>
-
+<!-- CSS Only -->
 <body style="font-family: 'Poppins', sans-serif;">
   <section class="vh-100" style="background-color: #eee;">
     <div class="container h-100">
@@ -22,8 +21,9 @@
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
-
+                  <p class=" h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Hola, 
+                    <br>Art Home Student</br
+                    ></p>
                   <form action="{{ route('login.post') }}" method="POST" class="mx-1 mx-md-4">
                     @csrf
 
@@ -36,7 +36,7 @@
                         </ul>
                       </div>
                     @endif
-
+                <!-- EMAIL -->
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
@@ -44,7 +44,7 @@
                           placeholder="Your Email" value="{{ old('email') }}" required />
                       </div>
                     </div>
-
+                  <!-- PASSWORD -->
                     <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
@@ -52,13 +52,17 @@
                           placeholder="Password" required />
                       </div>
                     </div>
-
-                    <div class="d-flex justify-content-center mb-lg-4">
-                      <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                  <!-- LOGIN BUTTON -->
+                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-3 px-5 shadow-sm text-white">
+                            Login
+                        </button>
                     </div>
-
-                    <div class="d-flex justify-content-center">
-                      <a href="{{ route('register') }}" class="btn btn-link text-decoration-none">Register kuno</a>
+                    <!-- REGISTRATION ROUTE -->
+                    <div class="d-flex justify-content-center mx-4">
+                        <a href="{{ route('register') }}" class="text-decoration-none fw-bold ms-4" style="color: #393f81;">
+                            Register kuno
+                        </a>
                     </div>
 
                   </form>
