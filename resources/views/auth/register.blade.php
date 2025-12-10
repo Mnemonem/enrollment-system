@@ -66,7 +66,7 @@
                           placeholder="Repeat Password" required />
                       </div>
                     </div>
-
+                    <!--Register Button  -->
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                       <button type="submit" class="btn btn-primary btn-lg">Register</button>
                     </div>
