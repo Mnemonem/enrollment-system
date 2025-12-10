@@ -3,35 +3,27 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-// // 1. DEFAULT PAGE (Kani ang una mugawas inig load sa system: LOGIN FORM)
-// Route::get('/', function () {
-//     return view('auth.login');
-// })->name('login');
-
-// // 2. REGISTRATION PAGE (Mugawas lang ni kung i-click ang Register button)
-// Route::get('/register', function () {
-//     return view('auth.register');
-// })->name('register');
-
-// // 3. DASHBOARD (Temporary destination human maka-login/register)
-// Route::get('/dashboard', function () {
-//     return view('dashboard.dashboard');
-// })->name('dashboard');
-
-
+// --- GUEST ROUTES (For users NOT logged in) ---
 Route::middleware('guest')->group(function () {
-    //LOGIN ROUTES
+
+    // 1. LOGIN PAGE (We put this at the Root URL '/')
     Route::get('/', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
-    //REGISTER ROUTES
-    Route::get('/', [AuthController::class, 'showRegister'])->name('register');
-    Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 
+    // 2. REGISTER PAGE (We MUST use a different URL, e.g., '/register')
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 });
 
-Route::middleware('')->group(function () {
-    return view('welcome');
-})->name('dashboard');
+// --- AUTH ROUTES (For users who ARE logged in) ---
+Route::middleware('auth')->group(function () {
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    // 3. DASHBOARD
+    // You must use Route::get here. You cannot just "return view" directly in the group.
+    Route::get('/dashboard', function () {
+        return view('welcome'); // Or view('dashboard.dashboard')
+    })->name('dashboard');
 
+    // 4. LOGOUT
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});

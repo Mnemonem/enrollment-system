@@ -19,9 +19,9 @@ class AuthController extends Controller
     public function register(Request $request)
     {       //validate method
         $request->validate([
-            'name' => 'required|string|max:25',
+            'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users', //icheck niya ug naa na ang email sa user
-            'password' => 'required|min.8|confirmed', //check and confirm for the password field
+            'password' => 'required|min:8|confirmed', //check and confirm for the password field
         ]);
         //DATABASE --USER--
         $user = User::create([
@@ -32,14 +32,18 @@ class AuthController extends Controller
         Auth::login($user);
         return redirect()->route('dashboard');
     }
+    public function showLogin()
+    {
+        return view('auth.login');
+    }
     public function login(Request $request)
     {
         //Handles the Login Logic (POST)
-        $request->validate([
-            $credentials = $request->validate([
-                'email' => 'required|email',
-                'password' => 'required',
-            ])
+
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+
         ]);
 
 
@@ -48,6 +52,7 @@ class AuthController extends Controller
             $request->session()->regenerate(); //Security measure
             return redirect()->route('dashboard');
         }
+        //failed to login
         return back()->withErrors([
             'email' => 'The provided credentials do not match',
         ]);
