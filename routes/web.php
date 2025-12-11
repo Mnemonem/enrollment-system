@@ -20,8 +20,8 @@ Route::middleware('auth')->group(function () {
 
     // 3. DASHBOARD
     Route::get('/dashboard', function () {
-        return view('dashboard.dashboard'); //dashboard view// ayaw kalimot nga under sa view kay another folder for ddashboard
-    })->name('dashboard');
+        return view('dashboard.student'); //student dashboard view// ayaw kalimot nga under sa view kay another folder for dashboard
+    })->name('student');
 
     // 4. LOGOUT
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
