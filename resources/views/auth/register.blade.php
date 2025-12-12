@@ -72,7 +72,7 @@
 
                     <div class="">
                      <a href="{{ route('login') }}" class="text-decoration-none fw-bold ms-4" style="color: #393f81;">
-                           Naa kay account daan? paglogin tawon diri
+                           Naa kay account daan? pagfiuqehiflogin tawon diri
                         </a>
                     </div>
                   </form>
