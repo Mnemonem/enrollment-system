@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title>
+    <title>Sample</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background: #f5f6fa; }
@@ -26,6 +26,7 @@
     <a href="#schedule">Class Schedule</a>
     <a href="#grades">Grades Viewing</a>
       <div class="d-flex justify-content-center mb-lg-4">
+        <!-- LOGOUT HANDLING ROUTE -->
          <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button type="submit" class="btn btn-primary">Logout sa ta dams</button>

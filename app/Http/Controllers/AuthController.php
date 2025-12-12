@@ -30,7 +30,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
         Auth::login($user);
-        return redirect()->route('student');
+        return redirect()->route('dashboard');
     }
     public function showLogin()
     {
@@ -49,7 +49,7 @@ class AuthController extends Controller
         //mag-attempt ug login
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate(); //Security measure
-            return redirect()->route('student');
+            return redirect()->route('dashboard');
         }
         //failed to login
         return back()->withErrors([
