@@ -35,10 +35,7 @@
 
     <a href="#profile">Dashboard</a>
     <a href="#subjects">Mood Entry</a>
-    <a href="#enrollment">Analytics</a>
-    <a href="#payments">Payment Module</a>
-    <a href="#schedule">Class Schedule</a>
-    <a href="#grades">Grades Viewing</a>
+    <a href="#enrollment">Mood History</a>
       <div class="d-flex justify-content-center mb-lg-4">
         <!-- Route for Logout -->
         <form action="{{ route('logout') }}" method="POST">
