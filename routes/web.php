@@ -17,12 +17,21 @@ Route::middleware('guest')->group(function () {
 
 // --- AUTH ROUTES (For users who ARE logged in) ---
 Route::middleware('auth')->group(function () {
-
     // 3. DASHBOARD
     Route::get('/dashboard', function () {
         return view('dashboard.dashboard'); //student dashboard view// ayaw kalimot nga under sa view kay another folder for dashboard
     })->name('dashboard');
 
-    // 4. LOGOUT
+    //4. MOOD ENTRY TAB
+    Route::get('/mood-entry', function (){
+        return view('activity.moodentry');
+    })->name('mood.entry');
+
+    // 5. MOOD HISTORY TAB
+    Route::get('/mood-history', function(){ 
+        return view('activity.moodhistory');
+    })->name('mood.history'); //dili makalimot sa name diri
+
+    // 6. LOGOUT
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
