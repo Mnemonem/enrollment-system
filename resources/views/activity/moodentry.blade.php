@@ -1,11 +1,12 @@
+<!-- Tawagon ang NAVBAR AND SIDEBAR -->
 @extends('layouts.layout')
 
 @section('content')
 
 <style>
     .content {
-        padding-left: 15px !important;  
-        padding-right: 15px !important; 
+        padding-left: 5px !important;  
+        padding-right: 5px !important; 
     }
     .table-card {
         background: #fff;
@@ -26,6 +27,7 @@
     .search-box { position: relative; width: 300px; }
     .search-box input { border-radius: 20px; padding-left: 35px; border: 1px solid #e0e0e0; background: #f9f9f9; }
     .search-box i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #aaa; }
+
     /* New Entry  */
     .btn-new { background-color: #0d6efd; color: white; border-radius: 20px; padding: 8px 20px; font-weight: 500; border: none; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; cursor: pointer; }
     .btn-new:hover { background-color: #0b5ed7; color: white; }
@@ -52,12 +54,12 @@
     .bg-soft-blue { background-color: #e3f2fd; color: #1565c0; }
     .bg-soft-green { background-color: #e8f5e9; color: #2e7d32; } */
 </style>
-    <div class="container-fluid"> <h3 class="fw-bold text-dark mb-4">Mood Entries</h3>
+    <div class="container-fluid"> <h3 class="fw-bold text-dark mb-4">Entries</h3>
 
         <div class="table-card">
             <div class="header-controls">
                 <div class="d-flex align-items-center">
-                    <select class="form-select form-select-sm" style="width: 150px; border-radius: 20px;">
+                    <select class="form-select form-select-sm" style="width: 150px; border-radius: 3px;">
                         <option>All Entries</option>
                         <option>This Week</option>
                         <option>This Month</option>
@@ -68,9 +70,9 @@
                         <i class="fas fa-search"></i>
                         <input type="text" class="form-control form-control-sm" placeholder="Search...">
                     </div>
-                    <button type="button" class="btn-new">
+                   <a href="{{ route ('mood.create') }}" class="btn-new">
                         <i class="fas fa-plus"></i> New Entry
-                    </button>
+                   </a>
                 </div>
             </div>
 
@@ -98,5 +100,4 @@
             </div>
         </div>
     </div>
-
     @endsection

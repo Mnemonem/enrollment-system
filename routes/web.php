@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MoodController;
 
 
 Route::middleware('guest')->group(function () {
@@ -31,7 +32,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/mood-history', function(){ 
         return view('activity.moodhistory');
     })->name('mood.history'); //dili makalimot sa name diri
-
-    // 6. LOGOUT
+    //6. CREATION OF ENTRY
+    // SHOW THE "New Entry" Page (GET)
+    Route::get('/mood/create', [MoodController::class, 'create'])->name('mood.create');
+    // B. Save sa Database (POST) 
+    Route::post('/mood/store', [MoodController::class, 'store'])->name('mood.store');
+    // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
