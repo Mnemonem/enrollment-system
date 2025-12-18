@@ -17,11 +17,9 @@
             color: #333;
         }
 
-        /* =========================
-           SIDEBAR
-        ========================= */
+        /* SIDEBAR */
         .sidebar {
-            width: 260px;
+            width: 250px;
             background: #FFFFFF;
             height: 100vh;
             position: fixed;
@@ -31,10 +29,15 @@
             display: flex;
             flex-direction: column;
             box-shadow: 2px 0 10px rgba(0,0,0,0.03);
+            /* align-items: center; */
+                
         }
 
         .sidebar-header {
-            padding: 30px 25px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
             margin-bottom: 20px;
         }
 
@@ -60,6 +63,7 @@
             margin-right: 10px;
             font-size: 1.1rem;
             color: #888;
+            align-items: center;
         }
 
         .sidebar-menu a:hover {
@@ -74,44 +78,44 @@
             border-right: 4px solid #555;
         }
 
-        /* =========================
-           TOP NAVBAR (FIXED, SOLID)
-        ========================= */
+        /* NAVBAR */
         .top-navbar {
             position: fixed;
             top: 0;
             left: 260px;
             right: 0;
             height: 80px;
-
             background: #F5F7FA;
             border-bottom: 1px solid #e5e7eb;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 40px;
-
+            padding: 0 13px;
             z-index: 1000;
         }
 
         .nav-left {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
+            height: 100%;
         }
 
-        .hamburger-btn {
+        .hamburger-btn { 
+            width: 100%;
             background: none;
             border: none;
             font-size: 1.2rem;
             cursor: pointer;
             color: #333;
+            
         }
 
         .company-logo {
-            height: 30px;
+            height: 40px;
             width: auto;
+            object-fit: contain;
+            margin-right: 10px;
         }
 
         .user-profile {
@@ -139,14 +143,15 @@
         .logout-link:hover {
             color: #dc3545;
         }
+        .logo-group{
+            display: flex;
+            align-items: center;
+        }
 
-        /* =========================
-           CONTENT AREA
-        ========================= */
         .content {
             margin-left: 260px;
-            margin-top: 80px; /* exact navbar height */
-            padding: 30px 40px;
+            margin-top: 100px; 
+            padding: 10px; 
         }
     </style>
 </head>
@@ -181,7 +186,7 @@
             <i class="fas fa-bars"></i>
         </button>
 
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2 logo-group">
             <img src="{{ asset('EmotiLens_Logo.png') }}" class="company-logo">
             <strong>EmotiLens</strong>
         </div>

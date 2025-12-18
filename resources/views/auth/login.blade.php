@@ -26,7 +26,6 @@
                     ></p>
                   <form action="{{ route('login.post') }}" method="POST" class="mx-1 mx-md-4">
                     @csrf
-
                     @if ($errors->any())
                       <div class="alert alert-danger">
                         <ul class="mb-0">
@@ -81,5 +80,4 @@
     </div>
   </section>
 </body>
-
 </html>

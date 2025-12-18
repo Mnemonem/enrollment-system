@@ -4,9 +4,7 @@
 @section('content')
 
 <style>
-/* =========================
-   STICKY HEADER (ONLY ONE)
-========================= */
+
 .app-header {
     position: sticky;
     top: 0;
@@ -15,30 +13,21 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* =========================
-   PAGE OFFSET (CRITICAL)
-========================= */
+
 .content-wrapper {
-    padding-top: 80px !important; /* matches header height */
+    /* padding-top: 0px !important;  */
     padding-left: 10px !important;
     padding-right: 10px !important;
-    width: 100%;
 }
 
-/* =========================
-   FORM CARD
-========================= */
 .form-card {
     background: #fff;
-    border-radius: 12px;
-    padding: 30px;
+    border-radius: 8px;
+    padding: 20px;
     box-shadow: 0 2px 15px rgba(0,0,0,0.02);
-    width: 100%;
+    width: 1220px;
 }
 
-/* =========================
-   FORM ELEMENTS
-========================= */
 .form-group { 
     margin-bottom: 25px; 
 }
@@ -73,9 +62,7 @@ textarea.clean-input:focus {
     border-bottom: 2px solid #6366F1;
 }
 
-/* =========================
-   BUTTON
-========================= */
+
 .btn-save {
     background: linear-gradient(135deg, #6366F1 0%, #EC4899 100%);
     color: white;
@@ -91,9 +78,6 @@ textarea.clean-input:focus {
     box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-/* =========================
-   BACK LINK
-========================= */
 .back-link {
     text-decoration: none;
     color: #1F2937;
@@ -109,9 +93,6 @@ textarea.clean-input:focus {
     color: #6366F1;
 }
 
-/* =========================
-   SECTION TITLE
-========================= */
 .section-title {
     font-weight: 700;
     color: #9CA3AF;
@@ -152,12 +133,12 @@ textarea.clean-input:focus {
                         <label class="label-accent">Primary Emotions</label>
                         <select name="emotion" class="clean-select" required>
                             <option disabled selected value="">Select primary feeling...</option>
-                            <option>Happy</option>
-                            <option>Sad</option>
-                            <option>Anxious</option>
-                            <option>Calm</option>
-                            <option>Angry</option>
-                            <option>Neutral</option>
+                            <option>Positive</option>
+                            <option>Negative</option>
+                            <option>Interpersonal</option>
+                            <option>Low Energy/Neutral</option>
+                            <option>High Energy</option>
+                            <option>Mixed</option>
                         </select>
                     </div>
 
@@ -192,7 +173,7 @@ textarea.clean-input:focus {
                                 <input type="time"
                                        name="time"
                                        class="clean-input"
-                                       value="{{ date('H:i') }}"
+                                       value="{{ \Carbon\Carbon::now('Asia/Manila')->format('H:i') }}" {{--Determininig the Time which is PST--}}
                                        required>
                             </div>
                         </div>
@@ -208,10 +189,11 @@ textarea.clean-input:focus {
 
                 </div>
             </div>
-
-            {{-- DETAILS --}}
+        </form>
+    </div>
+    <div class="form-card">
+    {{-- DETAILS --}}
             <div class="section-title">Details</div>
-
             <div class="form-group">
                 <label class="label-accent">Notes</label>
                 <textarea name="notes"
@@ -228,10 +210,7 @@ textarea.clean-input:focus {
                     Save Entry
                 </button>
             </div>
-
-        </form>
     </div>
-
 </div>
 
 @endsection
