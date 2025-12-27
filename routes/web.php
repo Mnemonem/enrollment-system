@@ -24,19 +24,26 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     //4. MOOD ENTRY TAB
-    Route::get('/mood-entry', function (){
-        return view('activity.moodentry');
-    })->name('mood.entry');
+    // Route::get('/mood-entry', function (){
+    //     return view('activity.moodentry');
+    // })->name('mood.entry');
+    Route::get('/mood-entry', [MoodController::class,'entry'])->name('mood.entry');
 
     // 5. MOOD HISTORY TAB
-    Route::get('/mood-history', function(){ 
-        return view('activity.moodhistory');
-    })->name('mood.history'); //dili makalimot sa name diri
+    // Route::get('/mood-history', function(){ 
+    //     return view('activity.moodhistory');
+    // })->name('mood.history'); //dili makalimot sa name diri
+    Route::get('/mood-history', [MoodController::class,'history'])->name('mood.history');
     //6. CREATION OF ENTRY
     // SHOW THE "New Entry" Page (GET)
     Route::get('/mood/create', [MoodController::class, 'create'])->name('mood.create');
+
     // B. Save sa Database (POST) 
     Route::post('/mood/store', [MoodController::class, 'store'])->name('mood.store');
+
     // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    //Mood History
+    // Route::get('/mood')
 });

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class MoodEntry extends Model
 {
     use HasFactory;
+    protected $table = "mood_entries";
     protected $fillable = [
         'user_id',
         'date',

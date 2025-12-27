@@ -38,4 +38,25 @@ class MoodController extends Controller
             // Redirect to history page (or dashboard)
         return redirect()->route('mood.history')->with('success', 'Entry created successfully!');
         }
+        
+        public function entry()
+        {
+            $entries = MoodEntry::where('user_id', auth::id())
+                                ->orderBy('date', 'desc')
+                                ->orderBy('time','desc')
+                                ->get();
+
+            return view('activity.moodentry', compact('entries'));
+            
+        }
+        public function history()
+        {
+            $entries = MoodEntry::where('user_id', auth::id())
+                                ->orderBy('date', 'desc')
+                                ->orderBy('time','desc')
+                                ->get();
+
+            return view('activity.moodhistory', compact('entries'));
+            
+        }
 }

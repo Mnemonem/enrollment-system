@@ -102,14 +102,53 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- Empty for now --}}
+                        @forelse($entries as $entry)
+                            <tr>
+                                <td>{{ \Carbon\Carbon::parse($entry->date)->format('M d, Y') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($entry->date)->format('l') }}</td>
+                                
+                                <td>
+                                    <span class="badge rounded-pill bg-primary px-3">{{ $entry->emotion }}</span>
+                                    @if($entry->specific_emotion)
+                                        <small class="text-muted d-block mt-1">{{ $entry->specific_emotion }}</small>
+                                    @endif
+                                </td>
+                                
+                                <td>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <div class="progress flex-grow-1" style="height: 6px; width: 60px;">
+                                            <div class="progress-bar" role="progressbar" style="width: {{ $entry->intensity * 10 }}%;"></div>
+                                        </div>
+                                        <small class="text-muted">{{ $entry->intensity }}/10</small>
+                                    </div>
+                                </td>
+                                
+                                <td class="text-truncate" style="max-width: 200px;">
+                                    {{ $entry->notes ?? '---' }}
+                                </td>
+                                
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-secondary border-0"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger border-0"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        @empty
+                            <!-- <tr>
+                                <td colspan="6" class="text-center py-5 text-muted">
+                                    <i class="fas fa-clipboard-list fa-2x mb-3 text-secondary" style="opacity: 0.5;"></i>
+                                    <p>No mood entries found.</p>
+                                </td>
+                            </tr> -->
+                        @endforelse
                     </tbody>
                 </table>
                 
-                <div class="text-center py-5 text-muted">
+                <!-- <div class="text-center py-5 text-muted">
                     <i class="fas fa-clipboard-list fa-2x mb-3 text-secondary" style="opacity: 0.5;"></i>
                     <p>No mood entries found.</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
