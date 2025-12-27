@@ -186,31 +186,30 @@ textarea.clean-input:focus {
                                class="clean-input"
                                placeholder="e.g. Overwhelmed, Excited, Bored">
                     </div>
-
+ 
                 </div>
+                       {{-- DETAILS --}}
+                    <div class="section-title">Details</div>
+                    <div class="form-group">
+                        <label class="label-accent">Notes</label>
+                        <textarea name="notes"
+                                class="clean-input"
+                                rows="3"
+                                placeholder="Describe what happened..."></textarea>
+                    </div>
+
+                    {{-- FOOTER --}}
+                    <div class="mt-4 pt-3 border-top d-flex justify-content-end align-items-center">
+                        <span class="text-muted small me-3">Check details before saving</span>
+                        <button type="submit" class="btn-save">
+                            <i class="fas fa-check me-2"></i>
+                            Save Entry
+                        </button>
+                    </div>
             </div>
         </form>
     </div>
-    <div class="form-card">
-    {{-- DETAILS --}}
-            <div class="section-title">Details</div>
-            <div class="form-group">
-                <label class="label-accent">Notes</label>
-                <textarea name="notes"
-                          class="clean-input"
-                          rows="3"
-                          placeholder="Describe what happened..."></textarea>
-            </div>
-
-            {{-- FOOTER --}}
-            <div class="mt-4 pt-3 border-top d-flex justify-content-end align-items-center">
-                <span class="text-muted small me-3">Check details before saving</span>
-                <button type="submit" class="btn-save">
-                    <i class="fas fa-check me-2"></i>
-                    Save Entry
-                </button>
-            </div>
-    </div>
+    
 </div>
 
 @endsection
